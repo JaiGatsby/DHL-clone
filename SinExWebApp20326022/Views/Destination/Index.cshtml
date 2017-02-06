@@ -12,28 +12,29 @@
 <table class="table">
     <tr>
         <th>
+            Serial No
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.City)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ProvinceCode)
         </th>
-        <th></th>
     </tr>
-
-@foreach (var item in Model) {
+    @{ var a = 1;}
+@foreach (var item in Model)
+{
     <tr>
+        <td>@a</td>
         <td>
             @Html.DisplayFor(modelItem => item.City)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ProvinceCode)
         </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>*@
+
+        @{a = a + 1;}
     </tr>
-}
+            }
 
 </table>
