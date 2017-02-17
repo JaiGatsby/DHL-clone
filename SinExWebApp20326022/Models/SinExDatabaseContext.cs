@@ -24,5 +24,9 @@ namespace SinExWebApp20326022.Models
         public System.Data.Entity.DbSet<SinExWebApp20326022.Models.ServiceType> ServiceTypes { get; set; }
 
         public System.Data.Entity.DbSet<SinExWebApp20326022.Models.ServicePackageFee> ServicePackageFees { get; set; }
+
+        public System.Data.Entity.DbSet<SinExWebApp20326022.Models.Currency> Currencies { get; set; }
+
+        public System.Data.Entity.DbSet<SinExWebApp20326022.Models.Destination> Destinations { get; set; }
     }
 }

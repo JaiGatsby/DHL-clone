@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SinExWebApp20326022.Models.Currency>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>CurrencyCode</th>
+        <th>Exchange Rate</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.CurrencyCode</td>
+        <td>@item.ExchangeRate</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CurrencyCode }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CurrencyCode }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CurrencyCode })
+        </td>
+    </tr>
+}
+
+</table>
