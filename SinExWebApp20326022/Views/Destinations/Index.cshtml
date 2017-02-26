@@ -6,35 +6,40 @@
 
 <h2>Index</h2>
 
-@*<p>
+<p>
     @Html.ActionLink("Create New", "Create")
-</p>*@
+</p>
 <table class="table">
     <tr>
-        <th>
-            Serial No
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.City)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ProvinceCode)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrencyCode)
+        </th>
+        <th></th>
     </tr>
-    @{ var a = 1;}
-@foreach (var item in Model)
-{
+
+@foreach (var item in Model) {
     <tr>
-        <td>@a</td>
         <td>
             @Html.DisplayFor(modelItem => item.City)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ProvinceCode)
         </td>
-
-        @{a = a + 1;}
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrencyCode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DestinationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DestinationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DestinationID })
+        </td>
     </tr>
-            }
+}
 
 </table>
