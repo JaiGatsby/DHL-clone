@@ -1,0 +1,12 @@
+﻿@model SinExWebApp20326022.ViewModels.ShipmentsReportViewModel
+
+@{
+    ViewBag.Title = "Shipment History";
+}
+
+<h2>Shipment History</h2>
+
+@Html.Partial("_ShipmentsSearchPartial",Model.Shipment)
+@Html.Partial("_ShippingListPartial",Model.Shipments)
+@Html.Partial("_ShipmentsPagingPartial",Model.Shipments)
+

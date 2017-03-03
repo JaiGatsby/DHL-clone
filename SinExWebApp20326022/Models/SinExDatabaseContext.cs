@@ -28,5 +28,11 @@ namespace SinExWebApp20326022.Models
         public System.Data.Entity.DbSet<SinExWebApp20326022.Models.Currency> Currencies { get; set; }
 
         public System.Data.Entity.DbSet<SinExWebApp20326022.Models.Destination> Destinations { get; set; }
+
+        public System.Data.Entity.DbSet<SinExWebApp20326022.Models.Shipment> Shipments { get; set; }
+
+        public System.Data.Entity.DbSet<SinExWebApp20326022.Models.ShippingAccount> ShippingAccounts { get; set; }
+
+        public System.Data.Entity.DbSet<SinExWebApp20326022.Models.BusinessShippingAccount> BusinessShippingAccounts { get; set; }
     }
 }
