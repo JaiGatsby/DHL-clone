@@ -1,0 +1,258 @@
+﻿@model SinExWebApp20319093.Models.BusinessShippingAccount
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Business Shipping Account</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>BusinessShippingAccount</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+        <h6>Company Information</h6>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContactPerson, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ContactPerson, new { htmlAttributes = new { @class = "form-control", @maxlength = "70" } })
+                @Html.ValidationMessageFor(model => model.ContactPerson, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Companyname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Companyname, new { htmlAttributes = new { @class = "form-control", @maxlength = "40" } })
+                @Html.ValidationMessageFor(model => model.Companyname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DepartmentName, htmlAttributes: new { @class = "control-label col-md-2" }) (if any)
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DepartmentName, new { htmlAttributes = new { @class = "form-control", @maxlength = "30" } })
+                @Html.ValidationMessageFor(model => model.DepartmentName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2", @maxlength = "14" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @maxlength = "30" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <h6>Address Information</h6>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Building, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Building, new { htmlAttributes = new { @class = "form-control", @maxlength = "50" } })
+                @Html.ValidationMessageFor(model => model.Building, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Street, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control", @maxlength = "35" } })
+                @Html.ValidationMessageFor(model => model.Street, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", @maxlength = "25" } })
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Province, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+             <!--@Html.EditorFor(model => model.Province, new { htmlAttributes = new { @class = "form-control", @maxlength = "2" } })-->   
+                @Html.DropDownListFor(model => model.Province, new SelectListItem[]
+                        {
+                            new SelectListItem { Text = "Beijing", Value = "BJ"},
+                            new SelectListItem { Text = "Changchun", Value = "JL" },
+                            new SelectListItem { Text = "Changsha", Value = "HN" },
+                            new SelectListItem { Text = "Chengdu", Value = "SC"},
+                            new SelectListItem { Text = "Chongqing", Value = "CQ" },
+                            new SelectListItem { Text = "Fuzhou", Value = "JX"},
+                            new SelectListItem { Text = "Golmud", Value = "QH" },
+                            new SelectListItem { Text = "Guangzhou", Value = "GD" },
+                            new SelectListItem { Text = "Guiyang", Value = "GZ" },
+                            new SelectListItem { Text = "Haikou", Value = "HI"},
+                            new SelectListItem { Text = "Hailar", Value = "NM" },
+                            new SelectListItem { Text = "Hangzhou", Value = "ZJ" },
+                            new SelectListItem { Text = "Harbin", Value = "HL"},
+                            new SelectListItem { Text = "Hefei", Value = "AH"},
+                            new SelectListItem { Text = "Hohhot", Value = "NM"},
+                            new SelectListItem { Text = "Hong Kong", Value = "HK" },
+                            new SelectListItem { Text = "Hulun Buir", Value = "NM" },
+                            new SelectListItem { Text = "Jinan", Value = "SD"},
+                            new SelectListItem { Text = "Kashi", Value = "XJ" },
+                            new SelectListItem { Text = "Kunming", Value = "YN" },
+                            new SelectListItem { Text = "Lanzhou", Value = "GS" },
+                            new SelectListItem { Text = "Lhasa", Value = "XZ" },
+                            new SelectListItem { Text = "Macau", Value = "MC" },
+                            new SelectListItem { Text = "Nanchang", Value = "JX" },
+                            new SelectListItem { Text = "Nanjing", Value = "JS" },
+                            new SelectListItem { Text = "Nanning", Value = "JX" },
+                            new SelectListItem { Text = "Qiqihar", Value = "HL" },
+                            new SelectListItem { Text = "Shanghai", Value = "SH"},
+                            new SelectListItem { Text = "Shenyang", Value = "LN" },
+                            new SelectListItem { Text = "Shijiazhuang", Value = "HE" },
+                            new SelectListItem { Text = "Taipei", Value = "TW" },
+                            new SelectListItem { Text = "Taiyuan", Value = "SX" },
+                            new SelectListItem { Text = "Tianjin", Value = "HE" },
+                            new SelectListItem { Text = "Urumqi", Value = "XJ" },
+                            new SelectListItem { Text = "Wuhan", Value = "HB" },
+                            new SelectListItem { Text = "Xi'an", Value = "SN" },
+                            new SelectListItem { Text = "Xining", Value = "QH" },
+                            new SelectListItem { Text = "Yinchuan", Value = "NX" },
+                            new SelectListItem { Text = "Yumen", Value = "GS" },
+                            new SelectListItem { Text = "Zhengzhou", Value = "HA"} }
+                        )
+
+                @Html.ValidationMessageFor(model => model.Province, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PostalCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PostalCode, new { htmlAttributes = new { @class = "form-control", @maxlength = "6" } })
+                @Html.ValidationMessageFor(model => model.PostalCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <h6>Credit Card Information</h6>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.CardType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <!--@Html.EditorFor(model => model.CardType, new { htmlAttributes = new { @class = "form-control" } })-->
+                    @Html.DropDownListFor(model => model.CardType, new SelectListItem[] 
+                        {
+                            new SelectListItem { Value = "American Express", Text = "American Express" },
+                            new SelectListItem { Value = "Diners Club", Text = "Diners Club" },
+                            new SelectListItem { Value = "Discover", Text = "Discover" },
+                            new SelectListItem { Value = "Mastercard", Text = "Mastercard" },
+                            new SelectListItem { Value = "Union Pay", Text = "Union Pay" },
+                            new SelectListItem { Value = "Visa", Text = "Visa" }
+                        }
+                    )
+
+                    @Html.ValidationMessageFor(model => model.CardType, "", new { @class = "text-danger" })
+</div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CardNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CardNumber, new { htmlAttributes = new { @class = "form-control", @maxlength = "19" } })
+                @Html.ValidationMessageFor(model => model.CardNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SecurityCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SecurityCode, new { htmlAttributes = new { @class = "form-control", @maxlength = "4" } })
+                @Html.ValidationMessageFor(model => model.SecurityCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CardHolderName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CardHolderName, new { htmlAttributes = new { @class = "form-control", @maxlength = "70" } })
+                @Html.ValidationMessageFor(model => model.CardHolderName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExpiryMonth, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <!--@Html.EditorFor(model => model.ExpiryMonth, new { htmlAttributes = new { @class = "form-control", @maxlength = "2" } })-->
+                @Html.DropDownListFor(model => model.ExpiryMonth, new SelectListItem[]
+                        {
+                            new SelectListItem { Value = "1", Text = "1" },
+                            new SelectListItem { Value = "2", Text = "2" },
+                            new SelectListItem { Value = "3", Text = "3" },
+                            new SelectListItem { Value = "4", Text = "4" },
+                            new SelectListItem { Value = "5", Text = "5" },
+                            new SelectListItem { Value = "6", Text = "6" },
+                            new SelectListItem { Value = "6", Text = "7" },
+                            new SelectListItem { Value = "6", Text = "8" },
+                            new SelectListItem { Value = "6", Text = "9" },
+                            new SelectListItem { Value = "6", Text = "10" },
+                            new SelectListItem { Value = "6", Text = "11" },
+                            new SelectListItem { Value = "6", Text = "12" }
+                         }
+                    )
+                @Html.ValidationMessageFor(model => model.ExpiryMonth, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExpiryYear, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <!--@Html.EditorFor(model => model.ExpiryYear, new { htmlAttributes = new { @class = "form-control", @maxlength = "2" } })-->
+                @Html.DropDownListFor(model => model.ExpiryYear, new SelectListItem[]
+                        {
+                            new SelectListItem { Value = "1", Text = "1" },
+                            new SelectListItem { Value = "2", Text = "2" },
+                            new SelectListItem { Value = "3", Text = "3" },
+                            new SelectListItem { Value = "4", Text = "4" },
+                            new SelectListItem { Value = "5", Text = "5" },
+                            new SelectListItem { Value = "6", Text = "6" },
+                            new SelectListItem { Value = "6", Text = "7" },
+                            new SelectListItem { Value = "6", Text = "8" },
+                            new SelectListItem { Value = "6", Text = "9" },
+                            new SelectListItem { Value = "6", Text = "10" },
+                            new SelectListItem { Value = "6", Text = "11" },
+                            new SelectListItem { Value = "6", Text = "12" }
+                         }
+                    )
+                @Html.ValidationMessageFor(model => model.ExpiryYear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
