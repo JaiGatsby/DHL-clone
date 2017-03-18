@@ -32,12 +32,15 @@ namespace SinExWebApp20326022.Models
         [RegularExpression(@"^[0-9]*$", ErrorMessage = "Phone number must be numeric.")]
         [Display(Name = "Phonenumber")]
         public virtual string PhoneNumber { get; set; }
+        
+        [StringLength(10)]
+        public virtual string UserName { get; set; }
 
         [Required]
         [StringLength(30)]
         [RegularExpression(@".+\@.+\..+", ErrorMessage = "Please enter a valid email address.")]
         [Display(Name = "Email")]
-        public virtual string EmailAddress { get; set; }
+        public virtual string Email { get; set; }
 
         [Required]
         [Display(Name = "Type")]

@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SinExWebApp20326022.Models;
+using SinExWebApp.Controllers;
 
 namespace SinExWebApp20326022.Controllers
 {

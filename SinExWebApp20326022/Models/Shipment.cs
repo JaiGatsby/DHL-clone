@@ -22,5 +22,6 @@ namespace SinExWebApp20326022.Models
         public virtual string Destination { get; set; }
         public virtual string  Status { get; set; }
         public virtual int ShippingAccountId { get; set; }
+        public virtual ICollection<ShippingAccount> ShippingAccount { get; set; }
     }
 }
